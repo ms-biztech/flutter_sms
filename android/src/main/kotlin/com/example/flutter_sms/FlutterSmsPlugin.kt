@@ -18,8 +18,6 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
-import io.flutter.plugin.common.PluginRegistry.Registrar
-
 
 class FlutterSmsPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
   private lateinit var mChannel: MethodChannel
@@ -61,6 +59,7 @@ class FlutterSmsPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
 
   // V1 embedding entry point. This is deprecated and will be removed in a future Flutter
   // release but we leave it here in case someone's app does not utilize the V2 embedding yet.
+/*
   companion object {
     @JvmStatic
     fun registerWith(registrar: Registrar) {
@@ -69,7 +68,7 @@ class FlutterSmsPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
       inst.setupCallbackChannels(registrar.messenger())
     }
   }
-
+**/
   override fun onMethodCall(call: MethodCall, result: Result) {
     when (call.method) {
         "sendSMS" -> {
